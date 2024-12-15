@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\*\shell\Process with OPCC]
+@="Process with OpcodeCloud"
+
+[HKEY_CLASSES_ROOT\*\shell\Process with OpcodeCloud\command]
+@="\"C:\\Program Files\\OPCC\\OPCC.exe\" \"%1\""

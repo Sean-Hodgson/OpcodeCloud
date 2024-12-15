@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh
+        }
+
+        h1 {
+            color: #4a90e2;
+        }
+
+        .container {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 700px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .file-label {
+            display: inline-block;
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .file-label:hover {
+            background-color: #357ab7;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f4f4f9;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #555;
+            text-align: left;
+            white-space: pre-wrap;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        button {
+            background-color: #4a90e2;
+           
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #357ab7;
+        }
+
+        button:disabled {
+            background-color: #bbb;
+            cursor: not-allowed;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #aaa;
+        }
+        .alert{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <img src="">
+
+    <div class="container">
+        <h1>OPCC File Analysis Tool</h1>
+        <h2 id="alert" class="alert"></h2>
+        <label class="file-label" for="fileInput">Choose File</label>
+        <input type="file" id="fileInput" accept=".exe">
+        <button id="processButton" disabled onclick="processFile()">Process File</button>
+        <div id="output">No file selected.</div>
+    </div>
+    <footer>
+        Powered by Neutralino.js
+    </footer>
+
+    <script>
+        const fileInput = document.getElementById("fileInput");
+        const processButton = document.getElementById("processButton");
+        const output = document.getElementById("output");
+
+        // Enable the button when a file is selected
+        fileInput.addEventListener("change", () => {
+            if (fileInput.files.length > 0) {
+                processButton.disabled = false;
+                output.innerText = `Selected file: ${fileInput.files[0].name}`;
+            } else {
+                processButton.disabled = true;
+                output.innerText = "No file selected.";
+            }
+        });
+
+        async function processFile() {
+            output.innerText = "Processing file...";
+            processButton.disabled = true;
+
+            try {
+                // Call your processing function here
+                await processFileImplementation(); // Replace with actual function
+                output.innerText += "\n\nProcessing complete!";
+            } catch (error) {
+                output.innerText += `\n\nError: ${error.message}`;
+            }
+
+            processButton.disabled = false;
+        }
+
+        async function processFileImplementation() {
+            // Placeholder for the actual file processing function
+            return new Promise((resolve) => setTimeout(resolve, 2000));
+        }
+    </script>
+</body>
+</html>
+
+
+
+<script src="js/neutralino.js"></script>
+<script src="/js/main.js"></script>

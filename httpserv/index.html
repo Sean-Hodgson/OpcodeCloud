@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPCC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Opcode Cloud</h1>
+        <p>Compare opcode lists and search for hashes easily.</p>
+    </header>
+    <main>
+        <section class="download">
+            <h2>Download the Tool</h2>
+            <p>Click the button below to download the tool.</p>
+            <a href="OPCC-release.zip" class="btn" download>Download Tool</a>
+        </section>
+
+        <section class="search">
+            <h2>Search for a Hash</h2>
+            <form id="searchForm">
+                <input type="text" id="hashInput" placeholder="Enter hash" required>
+                <button type="submit" class="btn">Search</button>
+            </form>
+            <div id="searchResult"></div>
+        </section>
+
+        <section class="instructions">
+            <h2>How to Use</h2>
+            <ol>
+                <li>Download the tool using the link above.</li>
+                <li>Extract the contents of the ZIP file.</li>
+                <li>Run the tool by running the OPCC.exe for your operating system.</li>
+            </ol>
+        </section>
+
+    </main>
+    <footer>
+        <p>&copy; 2024 OPCC</p>
+    </footer>
+    <script src="app.js"></script>
+    <style src="styles.css"></style>
+</body>
+</html>
